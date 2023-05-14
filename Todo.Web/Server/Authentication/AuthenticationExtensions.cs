@@ -47,6 +47,7 @@ public static class AuthenticationExtensions
 
         foreach (var (providerName, provider) in externalProviders)
         {
+            //Will need to set the credetials in an app secret or appSettings
             var section = builder.Configuration.GetSection($"Authentication:Schemes:{providerName}");
 
             if (section.Exists())
